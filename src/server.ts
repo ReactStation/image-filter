@@ -28,7 +28,6 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     try {
       image = await filterImageFromURL(url);
     } catch (error) {
-      console.log("ERROR ************************");
       if (error) res.status(500).send("Failed to read image file!");
     }
 
