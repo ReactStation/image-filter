@@ -18,9 +18,9 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   //    image_url: URL of a publicly accessible image
   // RETURNS
   //   the filtered image file
-  app.get("/filteredimage", async (req, res) => {
+  app.get("/filteredimage", async (req: express.Request, res: express.Response) => {
     //    1. validate the image_url query
-    let url = req.query.image_url;
+    let url:string = req.query.image_url;
     if (!url) res.status(400).send("Missing image url!");
 
     //    2. call filterImageFromURL(image_url) to filter the image
